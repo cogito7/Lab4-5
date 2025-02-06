@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class SolutionOne : MonoBehaviour
+public class SolutionTwo : MonoBehaviour
 {
     //public variables to be available in the inspector
     public string characterName;
@@ -36,7 +36,7 @@ public class SolutionOne : MonoBehaviour
         {"Warlock", 8 },
     };
 
-  /*
+
     public void PrintCharacterIndex()
     {
         if (characterIndex.ContainsKey(characterClass))
@@ -48,15 +48,15 @@ public class SolutionOne : MonoBehaviour
             Debug.Log("Class not found in dictionary. Check spelling!");
         }
     }
-  */
+
 
 
     //Table with ability score range (min, max) and modifier value
     private List<int[]> conModifiers = new List<int[]>()
     {
-        new int[] {1, 1, -5},  
-        new int[] {2, 3, -4},  
-        new int[] {4, 5, -3}, 
+        new int[] {1, 1, -5},
+        new int[] {2, 3, -4},
+        new int[] {4, 5, -3},
         new int[] {6, 7, -2},
         new int[] {8, 9, -1},
         new int[] {10, 11, +0},
@@ -83,13 +83,13 @@ public class SolutionOne : MonoBehaviour
     }
     void CalculateScore()
     {
-        if (!IsValidCharacter()) return;  
-        int hitDie = GetHitDie();          
-        int baseHP = CalculateBaseHP(hitDie); 
-        int toughBonus = CalculateToughBonus(); 
-        int hillDwarfBonus = CalculateHillDwarfBonus(); 
-        int conModifier = GetConstitutionModifier(characterCon); 
-        int characterHp = baseHP + toughBonus + hillDwarfBonus + conModifier * characterLevel; 
+        if (!IsValidCharacter()) return;
+        int hitDie = GetHitDie();
+        int baseHP = CalculateBaseHP(hitDie);
+        int toughBonus = CalculateToughBonus();
+        int hillDwarfBonus = CalculateHillDwarfBonus();
+        int conModifier = GetConstitutionModifier(characterCon);
+        int characterHp = baseHP + toughBonus + hillDwarfBonus + conModifier * characterLevel;
 
 
         // Output to console
@@ -161,7 +161,7 @@ public class SolutionOne : MonoBehaviour
         {
             // Average HP calculation
             double average = (hitDie - 1.0) / 2.0 + 1;
-            baseHP = (int) (characterLevel * (average + modifier));
+            baseHP = (int)(characterLevel * (average + modifier));
         }
 
         return baseHP; // Return the final calculated HP
@@ -218,6 +218,6 @@ public class SolutionOne : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
