@@ -15,8 +15,8 @@ public class SolutionOne : MonoBehaviour
     public bool hasToughFeat = false;
     public bool isRolledHP = false;
 
-    // List to store hit dice for each class
-    private List<int> hitDice = new List<int>() { 8, 12, 8, 8, 8, 10, 8, 10, 10, 8, 6, 6, 8 };
+    //private List<int> hitDice = new List<int>() { -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10 };
+    public string[] classList = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock"};
 
     //Dictionary for Character Class and hit dice for each for lookup
     private Dictionary<string, int> characterIndex = new Dictionary<string, int>()
@@ -35,21 +35,6 @@ public class SolutionOne : MonoBehaviour
         {"Wizard", 6 },
         {"Warlock", 8 },
     };
-
-  
-    public void PrintCharacterIndex()
-    {
-        if (characterIndex.ContainsKey(characterClass))
-        {
-            Debug.Log($"Class: {characterClass}, Hit Die: {characterIndex[characterClass]}");
-        }
-        else
-        {
-            Debug.Log("Class not found in dictionary. Check spelling!");
-        }
-    }
-  
-
 
     //Table with ability score range (min, max) and modifier value
     private List<int[]> conModifiers = new List<int[]>()
@@ -77,10 +62,9 @@ public class SolutionOne : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //PrintCharacterIndex();
         CalculateScore();
-
     }
+
     void CalculateScore()
     {
         if (!IsValidCharacter()) return;  
@@ -104,14 +88,19 @@ public class SolutionOne : MonoBehaviour
     {
         if (characterLevel <= 0 || characterCon <= 0)
         {
-            Debug.LogError("Please provide a valid character level and Constitution score.");
+            Debug.Log("Please provide a valid character level and Constitution score.");
             return false;
         }
 
         if (!characterIndex.ContainsKey(characterClass))
         {
-            Debug.LogError("Invalid character class! Please check your spelling!");
-            return false;
+            Debug.Log("Invalid character class! Please check your spelling!");
+            Debug.Log("Here are the available classes: ");
+            /*for (int i = 0; i < classList.Length; i++)
+            {
+                Debug.Log(classList[i]);
+                return false;
+            }*/
         }
 
         return true; // Class is valid
