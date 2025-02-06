@@ -154,6 +154,7 @@ MonoBehaviour:
   isHillDwarf: 0
   hasToughFeat: 0
   isRolledHP: 0
+  hitDice: 080000000c0000000800000008000000080000000a000000080000000a0000000a00000008000000060000000600000008000000
 --- !u!4 &412953030
 Transform:
   m_ObjectHideFlags: 0
@@ -320,12 +321,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: brian
-  characterClass: Barbarian
+  characterClass: d
   characterLevel: 4
   characterCon: 18
   isHillDwarf: 1
   hasToughFeat: 1
   isRolledHP: 0
+  classList:
+  - Artificer
+  - Barbarian
+  - Bard
+  - Cleric
+  - Druid
+  - Fighter
+  - Monk
+  - Ranger
+  - Rogue
+  - Paladin
+  - Sorcerer
+  - Wizard
+  - Warlock
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

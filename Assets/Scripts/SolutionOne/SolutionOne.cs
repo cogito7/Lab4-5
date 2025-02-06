@@ -95,11 +95,16 @@ public class SolutionOne : MonoBehaviour
         if (!characterIndex.ContainsKey(characterClass))
         {
             Debug.Log("Invalid character class! Please check your spelling!");
-            Debug.Log("Here are the available classes: ");
+            string availableClasses = "Here are the available classes: ";
             for (int i = 0; i < classList.Length; i++)
             {
-                Debug.Log(classList[i]);
+                availableClasses += classList[i];
+                if (i < classList.Length - 1)
+                {
+                    availableClasses += ", ";
+                }
             }
+            Debug.Log(availableClasses);
             return false;
         }
 
