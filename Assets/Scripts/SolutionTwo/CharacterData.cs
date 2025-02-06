@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class SolutionTwo : MonoBehaviour
+public class CharacterData : MonoBehaviour
 {
     //public variables to be available in the inspector
     public string characterName;
