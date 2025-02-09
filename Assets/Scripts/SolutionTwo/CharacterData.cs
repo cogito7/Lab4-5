@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterData : MonoBehaviour
 {
-    [System.Serializable]
+    /*[System.Serializable]
     public struct CharacterInfo
     {
         public string characterName;
@@ -19,4 +19,12 @@ public class CharacterData : MonoBehaviour
     }
 
     public CharacterInfo characterInfo;
+    */
+    public string characterName;
+    public string characterClass;
+    public int characterLevel;
+    public int characterCon;
+    public bool isHillDwarf;
+    public bool hasToughFeat;
+    public bool isRolledHP;
 }
