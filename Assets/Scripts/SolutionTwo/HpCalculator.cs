@@ -3,16 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class HpCalculator : MonoBehaviour
 {
-    /*[SerializeField]
-    private CharacterData characterInfo;
-
-    void Start()
-    {
-        Debug.Log(characterInfo.characterName);
-    }*/
+    public ClassData classData;
 
     [System.Serializable]
     public struct CharacterInfo
@@ -28,12 +23,11 @@ public class HpCalculator : MonoBehaviour
 
     public CharacterInfo characterInfo;
 
-
     //private List<int> hitDice = new List<int>() { -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10 };
     private string[] classList = { "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock" };
 
     //Dictionary for Character Class and hit dice for each for lookup
-    private Dictionary<string, int> characterIndex = new Dictionary<string, int>()
+    /*private Dictionary<string, int> characterIndex = new Dictionary<string, int>()
     {
         {"Artificer", 8 },
         {"Barbarian", 12 },
@@ -48,7 +42,7 @@ public class HpCalculator : MonoBehaviour
         {"Sorcerer", 6 },
         {"Wizard", 6 },
         {"Warlock", 8 },
-    };
+    };*/
 
     //Table with ability score range (min, max) and modifier value
     private List<int[]> conModifiers = new List<int[]>()
@@ -106,7 +100,7 @@ public class HpCalculator : MonoBehaviour
             return false;
         }
 
-        if (!characterIndex.ContainsKey(characterInfo.characterClass))
+        if (characterInfo.characterClass == null)
         {
             Debug.Log("Invalid character class! Please check your spelling!");
             string availableClasses = "Here are the available classes: ";
@@ -127,7 +121,12 @@ public class HpCalculator : MonoBehaviour
 
     int GetHitDie()
     {
-        return characterIndex[characterInfo.characterClass]; // Get the appropriate hit die for the selected class
+        string className = characterInfo.characterClass.ToString();
+        className = className.ToLower(); //sets every letter to lowercase
+        className = Regex.Replace(className, @"\b([a-z])", m => m.Value.ToUpper()); //capitalizes the first letter of the class input
+        characterInfo.characterClass = className;
+        int hitDie = classData.AssignHitDie(className, 0); //the 0 is temporary, it will be replaced with the proper value
+        return hitDie; // Get the appropriate hit die for the selected class
     }
 
     string HpTypeText()

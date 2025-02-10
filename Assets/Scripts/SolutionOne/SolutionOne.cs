@@ -15,8 +15,7 @@ public class SolutionOne : MonoBehaviour
     public bool hasToughFeat = false;
     public bool isRolledHP = false;
 
-    //private List<int> hitDice = new List<int>() { -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10 };
-    public string[] classList = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock"};
+    private string[] classList = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock"};
 
     //Dictionary for Character Class and hit dice for each for lookup
     private Dictionary<string, int> characterIndex = new Dictionary<string, int>()
@@ -95,16 +94,6 @@ public class SolutionOne : MonoBehaviour
         if (!characterIndex.ContainsKey(characterClass))
         {
             Debug.Log("Invalid character class! Please check your spelling!");
-            string availableClasses = "Here are the available classes: ";
-            for (int i = 0; i < classList.Length; i++)
-            {
-                availableClasses += classList[i];
-                if (i < classList.Length - 1)
-                {
-                    availableClasses += ", ";
-                }
-            }
-            Debug.Log(availableClasses);
             return false;
         }
 
@@ -206,8 +195,6 @@ public class SolutionOne : MonoBehaviour
         }
         throw new System.Exception("Invalid Constitution score! Please check your input."); // in case of an invalid Constitution score is entered
     }
-
-
 
     // Update is called once per frame
     void Update()
