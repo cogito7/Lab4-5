@@ -15,7 +15,7 @@ public class SolutionOne : MonoBehaviour
     public bool hasToughFeat = false;
     public bool isRolledHP = false;
 
-    public string[] classList = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock"};
+    private string[] classList = {"Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Ranger", "Rogue", "Paladin", "Sorcerer", "Wizard", "Warlock"};
 
     //Dictionary for Character Class and hit dice for each for lookup
     private Dictionary<string, int> characterIndex = new Dictionary<string, int>()
@@ -196,8 +196,6 @@ public class SolutionOne : MonoBehaviour
         }
         throw new System.Exception("Invalid Constitution score! Please check your input."); // in case of an invalid Constitution score is entered
     }
-
-
 
     // Update is called once per frame
     void Update()

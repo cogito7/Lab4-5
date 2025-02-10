@@ -142,19 +142,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412953028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7d1856aa4e38204abe12950951207be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   classData: {fileID: 919152469}
   characterInfo:
-    characterName: 
-    characterClass: 
-    characterLevel: 0
-    characterCon: 0
+    characterName: Jace Beleren
+    characterClass: Wizard
+    characterLevel: 20
+    characterCon: 8
     isHillDwarf: 0
-    hasToughFeat: 0
+    hasToughFeat: 1
     isRolledHP: 0
 --- !u!4 &412953030
 Transform:
@@ -164,12 +164,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412953028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 919152470}
+  m_Father: {fileID: 916192521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -183,7 +184,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -309,39 +309,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fef7d90ecf20854abfc4eaadb1969c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: brian
-  characterClass: Barbarian
-  characterLevel: 4
-  characterCon: 18
-  isHillDwarf: 1
-  hasToughFeat: 1
-  isRolledHP: 0
-  classList:
-  - Artificer
-  - Barbarian
-  - Bard
-  - Cleric
-  - Druid
-  - Fighter
-  - Monk
-  - Ranger
-  - Rogue
-  - Paladin
-  - Sorcerer
-  - Wizard
-  - Warlock
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +393,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &916192520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916192521}
+  m_Layer: 0
+  m_Name: Solutions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916192521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916192520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1370939485}
+  - {fileID: 412953030}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919152468
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,12 +463,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919152468}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 412953030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370939483
 GameObject:
@@ -494,32 +494,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370939483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fef7d90ecf20854abfc4eaadb1969c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
-  characterClass: 
-  characterLevel: 0
-  characterCon: 0
+  characterName: Jace Beleren
+  characterClass: Wizard
+  characterLevel: 20
+  characterCon: 8
   isHillDwarf: 0
   hasToughFeat: 0
   isRolledHP: 0
-  classList:
-  - Artificer
-  - Barbarian
-  - Bard
-  - Cleric
-  - Druid
-  - Fighter
-  - Monk
-  - Ranger
-  - Rogue
-  - Paladin
-  - Sorcerer
-  - Wizard
-  - Warlock
 --- !u!4 &1370939485
 Transform:
   m_ObjectHideFlags: 0
@@ -528,12 +514,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370939483}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 916192521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -541,6 +527,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 919152470}
-  - {fileID: 1370939485}
-  - {fileID: 412953030}
+  - {fileID: 916192521}
